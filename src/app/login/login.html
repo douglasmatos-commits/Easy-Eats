@@ -16,10 +16,10 @@
 
         <small *ngIf="form.get('email')?.touched && form.get('email')?.errors">
           <span *ngIf="form.get('email')?.errors?.['required']">
-            {{ mensagensValidacoes.email.required }}
+            <p class="msg-validacoes">{{ mensagensValidacoes.email.required }}</p>
           </span>
           <span *ngIf="form.get('email')?.errors?.['email']">
-            {{ mensagensValidacoes.email.email }}
+            <p class="msg-validacoes">{{ mensagensValidacoes.email.required }}</p>
           </span>
         </small>
       </div>
@@ -41,7 +41,7 @@
         </div>
 
         <small *ngIf="form.get('password')?.touched && form.get('password')?.errors">
-          {{ mensagensValidacoes.password.required }}
+          <p class="msg-validacoes">{{ mensagensValidacoes.password.required }}</p>
         </small>
       </div>
 

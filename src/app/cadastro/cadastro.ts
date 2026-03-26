@@ -73,9 +73,14 @@ export class Cadastro implements OnInit {
   constructor(private router: Router) {}
 
   salvar() {
-    if (this.form.invalid) return;
+    if (this.form.invalid) {
+      this.form.markAllAsTouched();
+      return;
+    }
 
-    console.log(this.form.value);
+    console.log('Dados de Cadastro:', this.form.value);
+
+    this.acessarRota('/dashboard');
   }
   togglePassword() {
     this.showPassword = !this.showPassword;

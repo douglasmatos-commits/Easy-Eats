@@ -48,7 +48,7 @@ export class Login implements OnInit {
 
     console.log('Dados de Login:', this.form.value);
 
-    this.acessarRota('/novo-pedido');
+    this.acessarRota('/dashboard');
   }
 
   protected acessarRota(rota: string) {

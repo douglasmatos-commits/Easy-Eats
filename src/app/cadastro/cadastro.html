@@ -15,7 +15,7 @@
           <input type="text" placeholder="Seu nome completo" formControlName="nome" />
 
           <small *ngIf="form.get('nome')?.touched && form.get('nome')?.errors">
-            {{ mensagensValidacoes.nome.required }}
+            <p class="msg-validacoes">{{ mensagensValidacoes.nome.required }}</p>
           </small>
         </div>
 
@@ -25,10 +25,10 @@
 
           <small *ngIf="form.get('email')?.touched && form.get('email')?.errors">
             <span *ngIf="form.get('email')?.errors?.['required']">
-              {{ mensagensValidacoes.email.required }}
+              <p class="msg-validacoes">{{ mensagensValidacoes.email.required }}</p>
             </span>
             <span *ngIf="form.get('email')?.errors?.['email']">
-              {{ mensagensValidacoes.email.email }}
+              <p class="msg-validacoes">{{ mensagensValidacoes.email.required }}</p>
             </span>
           </small>
         </div>
@@ -38,7 +38,7 @@
           <input type="text" placeholder="(00) 00000-0000" formControlName="telefone" />
 
           <small *ngIf="form.get('telefone')?.touched && form.get('telefone')?.errors">
-            {{ mensagensValidacoes.telefone.required }}
+           <p class="msg-validacoes">{{ mensagensValidacoes.telefone.required }}</p>
           </small>
         </div>
 
@@ -47,7 +47,7 @@
           <input type="text" placeholder="000.000.000-00" formControlName="cpf" />
 
           <small *ngIf="form.get('cpf')?.touched && form.get('cpf')?.errors">
-            {{ mensagensValidacoes.cpf.required }}
+            <p class="msg-validacoes">{{ mensagensValidacoes.cpf.required }}</p>
           </small>
         </div>
 
@@ -63,6 +63,11 @@
               {{ showPassword ? 'Ocultar' : 'Mostrar' }}
             </button>
           </div>
+
+          <small *ngIf="form.get('senha')?.touched && form.get('senha')?.errors">
+            <p class="msg-validacoes">{{ mensagensValidacoes.senha.required }}</p>
+            </small>
+
         </div>
 
         <div class="password-field">
@@ -77,14 +82,14 @@
               {{ showPasswordDown ? 'Ocultar' : 'Mostrar' }}
             </button>
           </div>
+
+          <small *ngIf="form.get('senha')?.touched && form.get('senha')?.errors">
+            <p class="msg-validacoes">{{ mensagensValidacoes.senha.required }}</p>
+            </small>
+
         </div>
 
-        <div class="file-group">
-          <label>Imagem de Perfil:</label>
-          <input type="file" />
-        </div>
-
-        <button type="submit" (click)="acessarRota('/login')" class="cadastro-button">
+        <button type="submit"class="cadastro-button">
           Cadastrar
         </button>
         <p class="login-link">
