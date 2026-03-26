@@ -15,6 +15,7 @@ import { Router } from '@angular/router';
 export class Cadastro implements OnInit {
   showPassword: boolean = false;
   showPasswordDown: boolean = false;
+  currentYear: number = new Date().getFullYear();
 
   private fb = inject(FormBuilder);
 
