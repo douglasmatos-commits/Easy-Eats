@@ -3,60 +3,39 @@
   <h1>Fila de Pedidos</h1>
 
   <!-- vazio -->
-  <div *ngIf="activeOrders.length === 0 && readyOrders.length === 0">
-    <p>Nenhum pedido na fila</p>
-  </div>
+  <p *ngIf="activeOrders.length === 0 && readyOrders.length === 0">
+    Nenhum pedido na fila
+  </p>
 
-  <!-- ATIVOS -->
+  <!-- pedidos ativos -->
   <div *ngFor="let order of activeOrders" class="card">
 
-    <div class="header">
-      <div>
-        <strong>#{{ order.id }}</strong>
-        <span>{{ order.customerName || 'Sem nome' }}</span>
-      </div>
+    <p><strong>Pedido #{{ order.id }}</strong></p>
+    <p>Cliente: {{ order.customerName || 'Sem nome' }}</p>
 
-      <span class="status">
-        {{ getStatus(order).label }}
-      </span>
+    <p>Status: {{ order.status }}</p>
+
+    <div *ngFor="let item of order.items">
+      {{ item.product.name }} - {{ item.quantity }}x
+      (R$ {{ item.product.price }})
     </div>
 
-    <div class="items">
-      <div *ngFor="let item of order.items">
-        {{ item.product.name }} x{{ item.quantity }}
-        <span class="price">
-          R$ {{ item.product.price * item.quantity | number:'1.2-2' }}
-        </span>
-      </div>
-    </div>
+    <p><strong>Total: R$ {{ order.total }}</strong></p>
 
-    <div class="footer">
-      <strong>
-        R$ {{ order.total | number:'1.2-2' }}
-      </strong>
-
-      <button
-        *ngIf="getStatus(order).next"
-        (click)="updateOrderStatus(order.id, getStatus(order).next)">
-        {{ getStatus(order).btnLabel }}
-      </button>
-    </div>
+    <button (click)="updateOrderStatus(order.id)">
+      Atualizar Status
+    </button>
 
   </div>
 
-  <!-- PRONTOS -->
+  <!-- pedidos prontos -->
   <div *ngIf="readyOrders.length > 0">
 
     <h2>Pedidos Prontos</h2>
 
-    <div *ngFor="let order of readyOrders" class="card ready">
-      <span>
-        #{{ order.id }} - {{ order.customerName || 'Sem nome' }}
-      </span>
-
-      <strong>
-        R$ {{ order.total | number:'1.2-2' }}
-      </strong>
+    <div *ngFor="let order of readyOrders" class="card">
+      <p>#{{ order.id }} - {{ order.customerName || 'Sem nome' }}</p>
+      <p>Total: R$ {{ order.total }}</p>
     </div>
 
   </div>
