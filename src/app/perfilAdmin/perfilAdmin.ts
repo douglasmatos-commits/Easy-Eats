@@ -2,10 +2,12 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from "@angular/router";
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'app-perfil-admin',
   imports: [RouterLink, RouterLinkActive],
-  templateUrl: './dashboard.html',
-  styleUrls: ['./dashboard.scss']
+  templateUrl: './perfilAdmin.html',
+  styleUrl: './perfilAdmin.scss',
 })
-export class DashboardComponent {
+export class PerfilAdmin {
+currentYear: any;
+
 }
