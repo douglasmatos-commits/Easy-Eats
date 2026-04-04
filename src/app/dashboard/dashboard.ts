@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { StatusPedidoEnum } from '../enum/pedidosEnum';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,9 +10,22 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class DashboardComponent {
   private router = inject(Router);
+  public statusPedido: StatusPedidoEnum = StatusPedidoEnum.PREPARANDO;
 
   protected acessarRota(rota: string) {
     this.router.navigate([rota]);
+  }
+
+  marcarComoPronto() {
+    this.statusPedido = StatusPedidoEnum.PRONTO;
+  }
+
+  marcarComoEntregue() {
+    this.statusPedido = StatusPedidoEnum.ENTREGUE;
+  }
+
+  marcarComoPreparando() {
+    this.statusPedido = StatusPedidoEnum.PREPARANDO;
   }
 
   constructor() {}
