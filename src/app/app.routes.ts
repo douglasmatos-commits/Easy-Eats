@@ -6,6 +6,7 @@ import { ComponentFila } from './Fila/component.fila';
 import { PerfilAdmin } from './perfilAdmin/perfilAdmin';
 import { PerfilGarcom } from './perfilGarcom/perfilGarcom';
 import { ConfirmarPedComponent } from './confirmar-ped/confirmar-ped';
+import { ControleEstoque } from './controle-estoque/controle-estoque';
 
 
 export const routes: Routes = [
@@ -37,4 +38,8 @@ export const routes: Routes = [
   {
     path:'confirmar-ped',
     component:ConfirmarPedComponent,
-  }]
+  },
+{
+  path: 'controle-estoque',
+  component: ControleEstoque,
+}]
