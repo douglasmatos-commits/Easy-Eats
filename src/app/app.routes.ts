@@ -8,6 +8,7 @@ import { PerfilGarcom } from './perfilGarcom/perfilGarcom';
 import { ConfirmarPedComponent } from './confirmar-ped/confirmar-ped';
 import { ControleEstoque } from './controle-estoque/controle-estoque';
 import { HistoricoVendasComponent } from './historico-vendas/historico-vendas';
+import { Financeiro } from './financeiro/financeiro';
 
 
 export const routes: Routes = [
@@ -47,5 +48,10 @@ export const routes: Routes = [
 {
   path: 'historico-vendas',
   component: HistoricoVendasComponent,
+},
+{
+  path: 'financeiro',
+  component: Financeiro,
 }];
+
 

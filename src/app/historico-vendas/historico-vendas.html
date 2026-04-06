@@ -1,49 +1,56 @@
+<div class="container">
 
-<div class="historico-container">
-  <h2 class="titulo">Histórico de Vendas</h2>
+  <h2>Histórico de Vendas</h2>
 
   <!-- KPIs -->
-  <div class="kpis">
-    <div class="kpi-card">
+  <div class="cards">
+
+    <div class="card kpi">
       <div class="icon">$</div>
       <div>
-        <h3>R$ 178.00</h3>
-        <span>Total filtrado</span>
+        <span class="valor">R$ 178.00</span>
+        <small>Total filtrado</small>
       </div>
     </div>
 
-    <div class="kpi-card">
+    <div class="card kpi">
       <div class="icon">🧾</div>
       <div>
-        <h3>3</h3>
-        <span>Pedidos</span>
+        <span class="valor">3</span>
+        <small>Pedidos</small>
       </div>
     </div>
+
   </div>
 
-  <!-- Busca -->
-  <div class="search-bar">
-    <input type="text" placeholder="🔍 Buscar por nome ou #pedido" />
-  </div>
+  <!-- BUSCA -->
+  <input 
+    type="text" 
+    placeholder="🔍 Buscar por nome ou #pedido"
+    class="input-busca"
+  />
 
-  <!-- Filtros -->
+  <!-- FILTROS -->
   <div class="filtros">
-    <button class="ativo">Todos</button>
-    <button>Aguardando</button>
-    <button>Preparando</button>
-    <button>Pronto</button>
+    <button [class.ativo]="filtroSelecionado === 'todos'" 
+      (click)="selecionarFiltro('todos')">Todos</button>
+    <button [class.ativo]="filtroSelecionado === 'aguardando'" 
+      (click)="selecionarFiltro('aguardando')">Aguardando</button>
+    <button [class.ativo]="filtroSelecionado === 'preparando'" 
+      (click)="selecionarFiltro('preparando')">Preparando</button>
+    <button [class.ativo]="filtroSelecionado === 'pronto'" 
+      (click)="selecionarFiltro('pronto')">Pronto</button>
   </div>
 
-  <!-- Lista de pedidos -->
-  <div class="lista-pedidos">
-    
+  <!-- LISTA -->
+  <div class="lista">
+
     <!-- Pedido 1 -->
-    <div class="pedido-card">
-      <div class="pedido-header">
-        <div>
-          <strong>#001 João</strong>
-        </div>
-        <span class="status preparando">preparando</span>
+    <div class="card pedido">
+
+      <div class="top">
+        <strong>#001 João</strong>
+        <span class="status preparando">Preparando</span>
       </div>
 
       <div class="itens">
@@ -52,19 +59,19 @@
         <p>🥤 Coca-Cola x2</p>
       </div>
 
-      <div class="pedido-footer">
+      <div class="footer">
         <span>02:21</span>
-        <strong>R$ 70.00</strong>
+        <strong class="valor">R$ 70.00</strong>
       </div>
+
     </div>
 
     <!-- Pedido 2 -->
-    <div class="pedido-card">
-      <div class="pedido-header">
-        <div>
-          <strong>#002 Maria</strong>
-        </div>
-        <span class="status aguardando">aguardando</span>
+    <div class="card pedido">
+
+      <div class="top">
+        <strong>#002 Maria</strong>
+        <span class="status aguardando">Aguardando</span>
       </div>
 
       <div class="itens">
@@ -72,11 +79,13 @@
         <p>🧅 Onion Rings x1</p>
       </div>
 
-      <div class="pedido-footer">
+      <div class="footer">
         <span>02:21</span>
-        <strong>R$ 42.00</strong>
+        <strong class="valor">R$ 42.00</strong>
       </div>
+
     </div>
 
   </div>
+
 </div>

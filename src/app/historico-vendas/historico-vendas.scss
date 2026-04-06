@@ -1,65 +1,69 @@
-.historico-container {
+.container {
   padding: 20px;
-  font-family: Arial, sans-serif;
   background: #f5f5f5;
 }
 
-.titulo {
+/* TÍTULO */
+h2 {
   margin-bottom: 20px;
 }
 
+/* ========================= */
 /* KPIs */
-.kpis {
+/* ========================= */
+.cards {
   display: flex;
-  gap: 20px;
+  gap: 15px;
   margin-bottom: 20px;
+}
 
-  .kpi-card {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    background: #fff;
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+.card.kpi {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  border-radius: 12px;
+  background: white;
+  border: 1px solid #eee;
 
-    .icon {
-      font-size: 22px;
-      color: orange;
-    }
+  .icon {
+    font-size: 20px;
+    color: #ff6b00;
+  }
 
-    h3 {
-      margin: 0;
-    }
+  .valor {
+    font-size: 20px;
+    font-weight: bold;
+  }
 
-    span {
-      font-size: 12px;
-      color: gray;
-    }
+  small {
+    color: #777;
   }
 }
 
-/* Busca */
-.search-bar {
+/* ========================= */
+/* BUSCA (VERDE IGUAL PRINT) */
+/* ========================= */
+.input-busca {
+  width: 100%;
   margin-bottom: 15px;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: #22c55e;
+  color: white;
+  font-size: 14px;
 
-  input {
-    width: 100%;
-    padding: 12px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    background: #22c55e;
-    color: white;
-
-    &::placeholder {
-      color: white;
-    }
+  &::placeholder {
+    color: #eaffea;
   }
 }
 
-/* Filtros */
+/* ========================= */
+/* FILTROS (BOTÕES REDONDOS) */
+/* ========================= */
 .filtros {
   display: flex;
   gap: 10px;
@@ -67,85 +71,91 @@
 
   button {
     border: none;
-    padding: 8px 14px;
+    padding: 8px 16px;
     border-radius: 20px;
     cursor: pointer;
-    background: #e5e5e5;
+    background: #22c55e;
+    color: white;
+    font-weight: 500;
 
     &.ativo {
-      background: #f97316;
-      color: white;
+      background: #ff6b00;
     }
   }
 }
 
-/* Lista */
-.lista-pedidos {
+/* ========================= */
+/* LISTA */
+/* ========================= */
+.lista {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-/* Card */
-.pedido-card {
+/* ========================= */
+/* CARD PEDIDO */
+/* ========================= */
+.card.pedido {
   background: white;
-  padding: 15px;
+  padding: 18px;
   border-radius: 12px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  border: 1px solid #e5e7eb;
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .itens {
+    margin: 10px 0;
+
+    p {
+      margin: 4px 0;
+      font-size: 14px;
+    }
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      color: #777;
+      font-size: 12px;
+    }
+
+    .valor {
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
 }
 
-/* Header */
-.pedido-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Status */
+/* ========================= */
+/* STATUS BADGE */
+/* ========================= */
 .status {
-  padding: 5px 10px;
+  padding: 5px 12px;
   border-radius: 20px;
   font-size: 12px;
   text-transform: lowercase;
-
-  &.aguardando {
-    background: #fde68a;
-    color: #92400e;
-  }
-
-  &.preparando {
-    background: #fed7aa;
-    color: #9a3412;
-  }
-
-  &.pronto {
-    background: #bbf7d0;
-    color: #065f46;
-  }
+  font-weight: 500;
 }
 
-/* Itens */
-.itens {
-  margin: 10px 0;
-
-  p {
-    margin: 3px 0;
-    font-size: 14px;
-  }
+.aguardando {
+  background: #fde68a;
+  color: #92400e;
 }
 
-/* Footer */
-.pedido-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.preparando {
+  background: #fed7aa;
+  color: #9a3412;
+}
 
-  span {
-    color: gray;
-    font-size: 12px;
-  }
-
-  strong {
-    font-size: 16px;
-  }
+.pronto {
+  background: #bbf7d0;
+  color: #065f46;
 }

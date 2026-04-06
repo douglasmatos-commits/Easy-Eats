@@ -16,6 +16,7 @@ interface Pedido {
   styleUrls: ['./historico-vendas.scss']
 })
 export class HistoricoVendasComponent {
+  filtroSelecionado: 'todos' | 'aguardando' | 'preparando' | 'pronto' = 'todos';
 
   pedidos: Pedido[] = [
     {
@@ -72,5 +73,9 @@ export class HistoricoVendasComponent {
 
   mudarFiltro(status: string) {
     this.filtroStatus = status;
+  }
+
+  selecionarFiltro(filtro: any) {
+    this.filtroSelecionado = filtro;
   }
 }
