@@ -3,12 +3,14 @@ import { Login } from './login/login';
 import { Cadastro } from './cadastro/cadastro';
 import { DashboardComponent } from './dashboard/dashboard';
 import { ComponentFila } from './Fila/component.fila';
-import { PerfilAdmin } from './perfilAdmin/perfilAdmin';
-import { PerfilGarcom } from './perfilGarcom/perfilGarcom';
 import { ConfirmarPedComponent } from './confirmar-ped/confirmar-ped';
 import { ControleEstoque } from './controle-estoque/controle-estoque';
 import { HistoricoVendasComponent } from './historico-vendas/historico-vendas';
 import { Financeiro } from './financeiro/financeiro';
+import { NovoPedido } from './novo-pedido/novo-pedido';
+import { PerfilAdmin } from './perfil-admin/perfilAdmin';
+import { PerfilGarcom } from './perfil-garcom/perfilGarcom';
+import { CadastroProdutoComponent } from './cadastroProduto/cadastroProduto';
 
 
 export const routes: Routes = [
@@ -38,8 +40,8 @@ export const routes: Routes = [
     component: PerfilGarcom,
   },
   {
-    path:'confirmar-ped',
-    component:ConfirmarPedComponent,
+    path: 'confirmar-ped',
+    component: ConfirmarPedComponent,
   },
 {
   path: 'controle-estoque',
@@ -55,3 +57,16 @@ export const routes: Routes = [
 }];
 
 
+  {
+    path: 'controle-estoque',
+    component: ControleEstoque,
+  },
+  {
+    path: 'novo-pedido',
+    component: NovoPedido,
+  },
+  {
+    path: 'cadastro-produto',
+    component: CadastroProdutoComponent,
+  },
+];
