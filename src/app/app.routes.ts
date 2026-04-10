@@ -8,6 +8,8 @@ import { ControleEstoque } from './controle-estoque/controle-estoque';
 import { NovoPedido } from './novo-pedido/novo-pedido';
 import { PerfilAdmin } from './perfil-admin/perfilAdmin';
 import { PerfilGarcom } from './perfil-garcom/perfilGarcom';
+import { CadastroProdutoComponent } from './cadastroProduto/cadastroProduto';
+
 
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -46,5 +48,9 @@ export const routes: Routes = [
   {
     path: 'novo-pedido',
     component: NovoPedido,
+  },
+  {
+    path: 'cadastro-produto',
+    component: CadastroProdutoComponent,
   },
 ];
